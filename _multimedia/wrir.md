@@ -1,0 +1,30 @@
+---
+title: "WRIR 97.3 FM, Richmond Independent Radio"
+date: 2018-11-18T12:33:46+10:00
+featured: true
+weight: 1
+layout: service
+---
+
+WRIR is a community radio station in Richmond, VA, and one of the largest low-power FM stations
+in the United States.
+
+As the Coronavirus descended upon us, we began to brainstorm ways that we could prepare our
+station for a potential shutdown. How could we continue broadcasting if volunteers weren't 
+able to make it to the station during the pandemic?
+
+> Our journey to prepare for the pandemic was covered in our station newsletter; download a
+copy [here](/assets/pdfs/WRIR-Goes-Remote.pdf).
+
+# Objectives
+
+1. **Allow remote access to critical station resources**. We need to make sure volunteers have access network shares and station computers.
+2. **Plan for remote broadcasting**. Our volunteers are used to broadcasting live from the studio. We need to make sure they can feel comfortable performing the same tasks from home.
+3. **Plan for remote playout scheduling**. WRIR typically has board operators in studio while pre-recorded shows are playing out. We need to make sure we can do that from home.
+
+# Tools
+
+- Adobe Audition, for recording and editing PSAs and programs
+- Libretime, for remote playout scheduling
+- Ubuntu Server, Apache httpd, NGINX, Icecast, and custom Bash scripting, for building and running our station's backend
+- Radio Systems, for mixing live shows and playout of prerecorded programs

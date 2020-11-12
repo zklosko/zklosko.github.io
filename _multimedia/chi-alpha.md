@@ -1,0 +1,43 @@
+---
+title: "Richmond Chi Alpha"
+date: 2018-11-18T12:33:46+10:00
+featured: true
+weight: 1
+layout: service
+---
+
+Chi Alpha is a network of Christian ministries on college campuses across the United States.
+The [Richmond Chi Alpha](https://www.rvaxa.com) chapter is compromised of students from Virginia Commonwealth University,
+Virginia Union University, and the University of Richmond. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KHjcaohuH-Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+> An episode of *The Moises Show*, an interview series with Chi Alpha missionary Moises
+> Davidson. The videos were shared on Davidson's Facebook Page, allowing his supporters to see the students he ministered to.
+
+I also worked with George Mason Chi Alpha to produce videos for their social media.
+
+Links:
+
+- [Chi Alpha Talk @ GMU](https://www.facebook.com/ChiAlphaGMU/videos/486569568760682/)
+- [GMU Chi Alpha Pre-Semester Update](https://www.facebook.com/ChiAlphaGMU/videos/2344128179177430/)
+- [GMU Chi Alpha Update #2](https://www.facebook.com/ChiAlphaGMU/videos/611344775939973/)
+
+# Roles 
+
+1. Mix audio for live events (mostly worship nights) and assist with set up and tear down
+2. Work with Chi Alpha missionaries and ministers to create engaging videos to explain and encourage
+3. Upload sermons to Anchor.fm for podcast distribution, and share on our Instagram
+
+<iframe sandbox="allow-same-origin allow-scripts allow-top-navigation allow-popups allow-forms" scrolling="no" width="100%" height="185" frameborder="0" src="https://embed.radiopublic.com/e?if=wednesday-night-relive-rva-chi-a-G3ney2"></iframe>
+> The Wednesday Night ReLive podcast 
+
+# Tools
+
+- dSLRs, for shooting videos
+- Davinci Resolve, a cross-platform video editing suite
+- Blender, for creating motion graphics
+- Behringer's X32 mixing console, for recording sermons and mixing audio for worship nights
+- Waveform, a DAW formerly known as Tracktion, for editing podcasts
+- Instagram, for sharing with our community
+- Anchor.fm, for publishing our podcast

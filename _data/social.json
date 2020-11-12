@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Github",
+    "link": "https://github.com/zklosko",
+    "image": "images/social/github.svg"
+  },
+  {
+    "name": "Twitter",
+    "link": "https://twitter.com/zklosko",
+    "image": "images/social/twitter.svg"
+  },
+  {
+    "name": "YouTube",
+    "link": "https://www.youtube.com/channel/UC888Zl9ooU3RGUZxBvmv8Jw",
+    "image": "images/social/youtube.svg"
+  }
+]
