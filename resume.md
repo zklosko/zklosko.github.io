@@ -7,18 +7,13 @@ bodyClass: page-resume
 
 ## Experience
 
-### WRIR 97.3 FM
+### Libretime
 
-> Engineer from October 2019 - Present
+> Contributor from May 2020 - Present
 
-Filled multiple roles, including managing live playout, deploying on-prem services,
-training volunteers, performing routine maintenance, and fixing equipment,
-to keep the station running smoothly before and during the Coronavirus pandemic.
-Known for problem solving and gentle coaching.
+I helped write documentation and redesign the website for the Libretime project.
 
-Skills: *Radio Systems Consoles*, *Ubuntu Server*, *Bash Scripting*, *Git*, *Windows 10*,
-*Adobe Audition*, *Libretime*, *Audio Engineering*
-
+Skills: *Git*, *Github*, *Jekyll*, *Bash*, *Multipass*, *HTML*, *CSS*, *Bootstrap*
 
 ### Chi Alpha Christian Fellowship
 
@@ -31,6 +26,18 @@ Spotify, or wherever you get your podcasts.
 
 Skills: *Davinci Resolve*, *Premere Pro*, *Blender*, *dSLR Video Production*,
 *live sound mixing*, *Instagram*, *Canva*, *podcast production*
+
+### WRIR 97.3 FM
+
+> Engineer from October 2019 - November 2020
+
+Filled multiple roles, including managing live playout, deploying on-prem services,
+training volunteers, performing routine maintenance, and fixing equipment,
+to keep the station running smoothly before and during the Coronavirus pandemic.
+Known for problem solving and gentle coaching.
+
+Skills: *Radio Systems Consoles*, *Ubuntu Server*, *Bash Scripting*, *Git*, *Windows 10*,
+*Adobe Audition*, *Libretime*, *Audio Engineering*
 
 ### Barista and Supervisor at Starbucks Coffee Company
 
