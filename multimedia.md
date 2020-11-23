@@ -1,6 +1,7 @@
 ---
 title: Multimedia
-layout: services-media
+layout: category
+category: multimedia
 intro_image: "images/illustrations/dev.svg"
 intro_image_absolute: true
 intro_image_hide_on_mobile: false

@@ -1,9 +1,9 @@
 ---
 title: "Mixed Success For RVA Restaurants During Coronavirus Pandemic"
-date: 2018-11-28T15:14:39+10:00
-featured: true
-weight: 2
-layout: service
+date: 2020-08-10T15:14:39+10:00
+layout: post
+category: news
+excerpt: “For us, it wasn’t about Phase One,” said Liz Kincaid, a manager with RVA Hospitality. “There’s no one to feed down there.”
 ---
 
 RICHMOND, Va. -- RVA Hospitality ran four high-end restaurants focused on the in-person dining experience in the Richmond area, according to manager Liz Kincaid. Then, the coronavirus brought business to a halt.

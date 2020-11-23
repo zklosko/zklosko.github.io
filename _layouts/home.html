@@ -24,47 +24,29 @@ bodyClass: page-home
 
 <div class="strip">
   <div class="container pt-6 pb-6 pb-md-10">
+    <h1>Hot off the press</h1>
     <div class="row justify-content-start">
-      {% for news in site.news %}
+      {% for post in site.posts %}
+      {% if post.featured %}
       <div class="col-12 col-md-4 mb-1">
         <div class="service service-summary">
           <div class="service-content">
+            <h5 class="service-content">{{ post.category }}</h5>
             <h2 class="service-title">
-              <a href="{{site.baseurl}}{{ news.url }}">{{ news.title }}</a>
+              <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a>
             </h2>
-            <p>{{ news.content | markdownify | strip_html | truncate: 200 }}</p>
+            <p>{{ post.excerpt | markdownify | strip_html }} <br>
+            <a href="{{site.baseurl}}{{ post.url }}">Read more</a></p>
           </div>
         </div>
       </div>
+      {% endif %}
       {% endfor %}
     </div>
     <div class="row justify-content-center">
       <div class="col-auto">
-        <a class="button button-primary" href="{{site.baseurl}}/news">View All News Clippings</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="strip">
-  <div class="container pt-6 pb-6 pb-md-10">
-    <div class="row justify-content-start">
-      {% for multimedia in site.multimedia %}
-      <div class="col-12 col-md-4 mb-1">
-        <div class="service service-summary">
-          <div class="service-content">
-            <h2 class="service-title">
-              <a href="{{site.baseurl}}{{ multimedia.url }}">{{ multimedia.title }}</a>
-            </h2>
-            <p>{{ multimedia.content | markdownify | strip_html | truncate: 200 }}</p>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-auto">
-        <a class="button button-primary" href="{{site.baseurl}}/multimedia">View All Multimedia</a>
+        <a class="button button-primary" href="{{site.baseurl}}/news">News Clippings</a>
+         <a class="button button-primary" href="{{site.baseurl}}/multimedia">Multimedia Projects</a>
       </div>
     </div>
   </div>

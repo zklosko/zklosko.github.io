@@ -20,17 +20,20 @@ bodyClass: page-services-list
 
 <div class="container pt-6 pb-6">
   <div class="row">
-    {% for media in site.multimedia %}
+    {% for post in site.posts %}
+    {% if post.category == page.category %}
     <div class="col-12 col-md-6 mb-3">
       <div class="service service-summary">
         <div class="service-content">
           <h2 class="service-title">
-            <a href="{{site.baseurl}}{{ media.url }}">{{ media.title }}</a>
+            <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a>
           </h2>
-          <p>{{ media.content | markdownify | strip_html | truncate: 200 }}</p>
+          <p>{{ post.excerpt | markdownify | strip_html }} <br>
+          <a href="{{site.baseurl}}{{ post.url }}">Read more</a></p>
         </div>
       </div>
     </div>
+    {% endif %}
     {% endfor %}
   </div>
 </div>

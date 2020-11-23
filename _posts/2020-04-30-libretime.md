@@ -1,14 +1,16 @@
 ---
 title: "Libretime Radio Automation"
-date: 2018-11-18T12:33:46+10:00
-featured: true
-weight: 1
-layout: service
+date: 2020-04-30T12:33:46+10:00
+featured: false
+layout: post
+category: multimedia
 ---
 
 Libretime is an open-source radio automation and playout software, designed for internet radio
 stations but has been increasingly by low-power FM stations during the Coronavirus pandemic.
 While setting up a Libretime instance for WRIR, I noticed the instructions were hard to follow.
+
+<!--more-->
 
 I finally came across a video which explained an extra step the documentation left out.
 I had been taking notes during the installation process and wondered if other stations had

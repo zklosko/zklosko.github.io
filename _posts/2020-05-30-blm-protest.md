@@ -1,14 +1,17 @@
 ---
 title: "‘Hands up, don’t shoot’: Black Lives Matter protesters gather in Richmond"
-date: 2018-11-28T15:14:39+10:00
+date: 2020-05-30T15:14:39+10:00
 featured: true
-weight: 3
-layout: service
+excerpt: “At this point, I don’t think there’s any other response,” said protester Aaliyah Kilpatrick as she watched the bright orange flames coming from the police car. “You’ve got to fight violence with violence.”
+layout: post
+category: news
 ---
 
 A Black Lives Matter protest for the death of George Floyd in downtown Richmond became violent Friday evening as protesters shattered windows and set fire to a police car and a GRTC bus.
 
 “At this point, I don’t think there’s any other response,” said protester Aaliyah Kilpatrick as she watched the bright orange flames coming from the police car. “You’ve got to fight violence with violence.”
+
+<!--more-->
 
 Police have administered tear gas canisters and sprayed mace at protesters, and several people have broken down the glass door of the 7-Eleven on West Grace and Hamilton Streets. Windows of RamTech have been broken on Monroe Park campus.
 

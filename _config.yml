@@ -23,11 +23,8 @@ seo:
   meta_twitter_site: "@zklosko"
   meta_twitter_creator: "@zklosko"
 
-collections:
-  news:
-    output: true
-  multimedia:
-    output: true
+
+excerpt_separator: <!--more-->
 
 sass:
   indentWidth: 4
