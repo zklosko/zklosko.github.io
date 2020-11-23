@@ -11,9 +11,12 @@ bodyClass: page-resume
 
 > Contributor from May 2020 - Present
 
-I helped write documentation and redesign the website for the Libretime project.
+I helped write documentation and redesign the website for the Libretime project. As part
+of that redesign, I helped the project migrate from the *Mkdocs* framework to *Jekyll*, 
+which was more flexible for our needs. I am currently working with a team of core contributors 
+to put together Libretime's 3.0.0 beta release.
 
-Skills: *Git*, *Github*, *Jekyll*, *Bash*, *Multipass*, *HTML*, *CSS*, *Bootstrap*
+Skills: *Git*, *Github*, *Jekyll*, *Bash Scripting*, *Multipass*, *HTML*, *CSS*, *Bootstrap*
 
 ### Chi Alpha Christian Fellowship
 
@@ -25,7 +28,7 @@ You can listen to their Wednesday Night ReLive podcast on [Anchor.fm](https://an
 Spotify, or wherever you get your podcasts.
 
 Skills: *Davinci Resolve*, *Premere Pro*, *Blender*, *dSLR Video Production*,
-*live sound mixing*, *Instagram*, *Canva*, *podcast production*
+*Live sound mixing*, *Instagram*, *Canva*, *Podcast production*, *Audio editing*
 
 ### WRIR 97.3 FM
 
@@ -45,8 +48,8 @@ Skills: *Radio Systems Consoles*, *Ubuntu Server*, *Bash Scripting*, *Git*, *Win
 
 As a Barista, I was fully involved in the customer’s experience, from taking orders to making drinks to general upkeep of the store. As a Shift Supervisor, I took on the responsibilities of handling cash, managing inventory and training Baristas to make every moment right. I became a Certified Food Safety Manager as part of my promotion.
 
-Skills: *customer service*, *cash handling*, *training and supervising a group of 2-4 employees*,
-*expertly making coffee (helpful for any internship,* [wink, wink](/contact)*)*
+Skills: *Customer service*, *Cash handling*, *Training and supervising a group of 2-4 employees*, 
+*Expertly making coffee (helpful for any internship,* [wink, wink](/contact)*)*
 
 ## Education
 
