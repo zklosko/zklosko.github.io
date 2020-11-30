@@ -1,7 +1,6 @@
 ---
 title: "‘Hands up, don’t shoot’: Black Lives Matter protesters gather in Richmond"
 date: 2020-05-30T15:14:39+10:00
-featured: true
 excerpt: “At this point, I don’t think there’s any other response,” said protester Aaliyah Kilpatrick as she watched the bright orange flames coming from the police car. “You’ve got to fight violence with violence.”
 layout: post
 category: news
