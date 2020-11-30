@@ -4,6 +4,9 @@ date: 2020-04-30T12:33:46+10:00
 featured: false
 layout: post
 category: multimedia
+img: /images/multimedia/libretime-schedule-show.png
+caption: A screenshot from the Libretime interface, from scheduling a Webstream in a show (Zachary Klosko)
+excerpt: A platform is sometimes only as good as its user guide. I aimed to improve that for the Libretime Project.
 ---
 
 Libretime is an open-source radio automation and playout software, designed for internet radio

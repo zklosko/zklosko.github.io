@@ -7,7 +7,10 @@ layout: default
     <div class="col-12 col-md-8">
       <div class="service service-single">
         <h3 class="content">{{ page.category | upcase }}</h3>
-        <!-- <img src="{{ page.image }}"> -->
+        <img src="{{page.img}}" class="thumbs">
+        <blockquote>
+        	<p><small>{{page.caption}}</small></p>
+        </blockquote>
         <h1 class="title">{{page.title}}</h1>
         <h5 class="content">by Zachary Klosko</h5
         <br>

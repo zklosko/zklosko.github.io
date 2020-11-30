@@ -2,9 +2,10 @@
 title: "Delegate Plans To Reintroduce Quarantine Pay Bill Next Session"
 date: 2020-10-13T15:14:39+10:00
 featured: true
-weight: 1
 layout: post
 category: news
+img: /images/multimedia/quarantine-pay.jpg
+caption: Workers prepare beverages under COVID-19 precautions (Zachary Klosko/VCU)
 excerpt: Del. Elizabeth Guzmán, D-Woodbridge, has a mission to secure better financial benefits for minimum wage workers, but she said it’s not going as planned.
 ---
 
