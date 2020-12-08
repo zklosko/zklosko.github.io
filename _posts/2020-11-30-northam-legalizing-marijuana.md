@@ -9,13 +9,13 @@ caption: A person smokes a blunt of marijuana (<a href="https://unsplash.com/@za
 excerpt: Virginia Gov. Ralph Northam plans to introduce legislation to legalize the recreational use of marijuana in the 2021 legislative season.
 ---
 
-RICHMOND, Va. -- After [decriminalizing simple marijuana possession](https://lis.virginia.gov/cgi-bin/legp604.exe?201+sum+SB2) in May of 2020, Gov. Ralph Northam is looking to continue relaxing penalties for drug-related charges.
+RICHMOND, Va. -- After [decriminalizing simple marijuana possession](https://lis.virginia.gov/cgi-bin/legp604.exe?201+sum+SB2) in May of 2020, Gov. Ralph Northam is looking to further relax penalties for drug-related charges.
 
 Northam plans to introduce legislation to legalize the recreational use of marijuana, according to a [press release](https://www.governor.virginia.gov/newsroom/all-releases/2020/november/headline-861390-en.html) published on Tuesday.
 
 “It’s time to legalize marijuana in Virginia,” Northam said in the press release. “I look forward to working with the General Assembly to get this right.”
 
-“Getting it right” means passing legislation which includes substance abuse prevention and prohibiting smoking marijuana indoors in public places, according to the press release. Northam also promised to “lead with a focus on equity,” noting the impact marijuana criminalization has had on minority communities.
+Northam said he wants legislation to include substance abuse prevention and prohibiting smoking marijuana indoors in public places, according to the press release. Northam also promised to “lead with a focus on equity,” noting the impact marijuana criminalization has had on minority communities.
 
 Black Virginians were arrested for possession of marijuan at more than three times the rate of white individuals over the last decade, according to a [report](http://jlarc.virginia.gov/landing-2020-marijuana-legalization.asp) by the Joint Legislative Audit and Review Commission. The commission suggested the creation of an automatic expungement process for criminal records of past marijuana charges.
 
