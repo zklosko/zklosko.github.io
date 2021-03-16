@@ -1,7 +1,6 @@
 ---
 title: "Northam lays out priorities with legalizing marijuana in Virginia"
 date: 2020-11-30T12:33:46+10:00
-featured: true
 layout: post
 category: news
 img: /images/news/marijuana-smoking.jpg

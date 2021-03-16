@@ -1,7 +1,6 @@
 ---
 title: "Libretime Radio Automation"
 date: 2020-04-30T12:33:46+10:00
-featured: false
 layout: post
 category: multimedia
 img: /images/multimedia/libretime-schedule-show.png

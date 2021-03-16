@@ -1,7 +1,6 @@
 ---
 title: "MASC 303 Twitter Moment"
 date: 2020-11-23T12:33:46+10:00
-featured: true
 layout: post
 category: multimedia
 img: /images/multimedia/virginia-capitol.jpg

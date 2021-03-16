@@ -8,5 +8,10 @@
     "name": "Twitter",
     "link": "https://twitter.com/zklosko",
     "image": "images/social/twitter.svg"
+  },
+  {
+    "name": "LinkedIn",
+    "link": "https://linkedin.com/in/zklosko",
+    "image": "images/social/linkedin.svg"
   }
 ]

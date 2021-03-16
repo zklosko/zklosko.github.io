@@ -1,7 +1,6 @@
 ---
 title: "Delegate Plans To Reintroduce Quarantine Pay Bill Next Session"
 date: 2020-10-13T15:14:39+10:00
-featured: true
 layout: post
 category: news
 img: /images/multimedia/quarantine-pay.jpg

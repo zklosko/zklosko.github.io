@@ -7,8 +7,6 @@ intro_image_absolute: true
 intro_image_hide_on_mobile: true
 ---
 
-# Talk Openly // Talk Often
+# An expressive storyteller 
 
-Every story has two sides; it's my goal to make both sides easily readable, watchable,
-and transmittable. I aim to tell the stories the public needs to know while allowing
-journalists to thrive in a changing, challenging industry.
+I capturing the lives of others for print, web, and social media. I use Excel, Linux, HTML, Canva, Premiere Pro, dSLRs, and Twitter to get it done. Doable? Definately.
