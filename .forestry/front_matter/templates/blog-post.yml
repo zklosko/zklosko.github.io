@@ -26,3 +26,5 @@ fields:
 - type: textarea
   name: excerpt
   label: excerpt
+pages:
+- _posts/delegate-celebrates-senate-passage-of-limited-paid-leave-bill.md
