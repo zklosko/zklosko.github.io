@@ -3,7 +3,7 @@ title: "Mixed Success For RVA Restaurants During Coronavirus Pandemic"
 date: 2020-08-10T15:14:39+10:00
 layout: post
 category: news
-img: /images/news/were-closed-covid.jpg
+img: /images/were-closed-covid.jpg
 caption: A business displays signs saying they are closed due to COVID-19 (<a href="https://unsplash.com/@anastasiiachepinska?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Anastasiia Chepinska</a>/<a href="https://unsplash.com/s/photos/closed?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>)
 excerpt: “For us, it wasn’t about Phase One,” said Liz Kincaid, a manager with RVA Hospitality. “There’s no one to feed down there.”
 ---

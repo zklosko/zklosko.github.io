@@ -3,7 +3,7 @@ title: "Libretime Radio Automation"
 date: 2020-04-30T12:33:46+10:00
 layout: post
 category: multimedia
-img: /images/multimedia/libretime-schedule-show.png
+img: /images/libretime-schedule-show.png
 caption: A screenshot from the Libretime interface, from scheduling a Webstream in a show (Zachary Klosko)
 excerpt: A platform is sometimes only as good as its user guide. I aimed to improve that for the Libretime Project.
 ---
@@ -20,7 +20,7 @@ been struggling too.
 
 The documentation site included "Help edit this page" on each page, so I did.
 
-![](/images/multimedia/libretime-header.png)
+![](/images/libretime-header.png)
 > Before (left) and after (right) screenshots of a website redesign for the Libretime project.
 
 # Objectives 
@@ -38,8 +38,8 @@ a static site generator that was supported by Github Pages (our repository is ho
 - Bootstrap, a flexible theming template using CSS and SASS
 - Github Pages, for free hosting!
 
-![](/images/multimedia/libretime-docs.png)
+![](/images/libretime-docs.png)
 > The main documentation page
 
-![](/images/multimedia/libretime-article.png)
+![](/images/libretime-article.png)
 > How a documentation article displays

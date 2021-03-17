@@ -3,7 +3,7 @@ title: "Northam lays out priorities with legalizing marijuana in Virginia"
 date: 2020-11-30T12:33:46+10:00
 layout: post
 category: news
-img: /images/news/marijuana-smoking.jpg
+img: /images/marijuana-smoking.jpg
 caption: A person smokes a blunt of marijuana (<a href="https://unsplash.com/@zayyerrn?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ahmed Zayan</a>/<a href="https://unsplash.com/s/photos/marijuana?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>)
 excerpt: Virginia Gov. Ralph Northam plans to introduce legislation to legalize the recreational use of marijuana in the 2021 legislative season.
 ---

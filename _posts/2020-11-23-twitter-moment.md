@@ -3,8 +3,8 @@ title: "MASC 303 Twitter Moment"
 date: 2020-11-23T12:33:46+10:00
 layout: post
 category: multimedia
-img: /images/multimedia/virginia-capitol.jpg
-thumb: /images/multimedia/thumbvirginia-capitol.jpg
+img: /images/virginia-capitol.jpg
+thumb: /images/thumbvirginia-capitol.jpg
 caption: Virginia's Capitol Building (Getty Images)
 excerpt: A collection of tweets covering local politics (and the 2020 Election) for my Reporting for Print and Web class at VCU. #303MIR
 ---
