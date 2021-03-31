@@ -3,7 +3,6 @@ exclude: ['README.md', 'stackbit.yaml', 'LICENSE', 'netlify.toml']
 permalink: pretty
 title: 'Journalism by Zachary Klosko'
 
-google_analytics_id: ""
 homepage:
   show_call_box: true
 logo:
