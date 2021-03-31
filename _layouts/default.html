@@ -12,7 +12,7 @@
   {% endif %}
   {% if page.caption %}
     <meta property="og:title" content="{{ page.title | append: ' - ' | append: site.seo.meta_og_title }}" />
-    <meta property="og:url" content="{{ page.url }}" />
+    <meta property="og:url" content="{{ site.seo.meta_og_url | append: page.url }}" />
     <meta property="og:image" content="{{ site.seo.meta_og_image }}" />
     <meta property="og:description" content="{{ page.exerpt }}" />
     {% else %}
