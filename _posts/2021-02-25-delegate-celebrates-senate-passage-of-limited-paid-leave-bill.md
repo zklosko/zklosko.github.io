@@ -23,6 +23,8 @@ Guzmán took to Twitter after the Senate’s 21-18 vote to express her excitemen
 
 “Thank you!!” Guzmán [wrote on Twitter](https://twitter.com/guzman4virginia/status/1365000449430933505). “We did it!!”
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Thank you!! We did it!! <a href="https://t.co/mDdlmszM6u">https://t.co/mDdlmszM6u</a></p>&mdash; Elizabeth Guzman (@guzman4virginia) <a href="https://twitter.com/guzman4virginia/status/1365000449430933505?ref_src=twsrc%5Etfw">February 25, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
 [House Bill 2137](https://lis.virginia.gov/cgi-bin/legp604.exe?212+sum+HB2137) originally offered the benefit to many essential workers, including first responders, retail workers, cleaning workers, teachers, jail and prison employees and transportation workers.
 
 The bill advanced from the House with an amendment for small businesses; [it did not ](https://www.princewilliamtimes.com/news/virginia-house-advances-del-elizabeth-guzmans-paid-leave-bill-for-essential-workers/article_e46781fc-6731-11eb-9a67-fbbd5410c6de.html)apply to retail businesses with fewer than 25 employees. The Senate later amended the bill to only offer the benefit to in-home health care workers who serve patients with Medicaid coverage.
