@@ -5,18 +5,33 @@ layout: page
 bodyClass: page-resume
 ---
 
+I'm a budding journalist and broadcast engineer, whose talents have helped sustain local storytelling during the coronavirus pandemic.
+
 ## Experience
+
+### Capitol News Service
+
+> Digital Journalist from January 2021 - Present
+
+Wrote breaking news on the Virginia General Assembly for print, web, and social media. My work has been published in tens of newspapers and websites around Virginia, including the Washington Post, VPM, and the Associated Press.
+
+Skills: *Google Docs*, *Excel*, *WordPress*, *Twitter*, *Covering breaking news*
+
+### WRIR 97.3 FM
+
+> Broadcast Engineer from March 2020 - Present
+
+Filled multiple roles, including managing live playout, deploying on-prem services, training volunteers, performing routine maintenance, and fixing equipment, to keep the station running smoothly before and during the Coronavirus pandemic. Known for problem solving and gentle coaching.
+
+Skills: *Radio Systems Consoles*, *Linux*, *Docker*, *Bash Scripting*, *Git*, *Adobe Audition*, *Audio Engineering*
 
 ### Libretime
 
-> Contributor from May 2020 - Present
+> Documentation Writer, Frontend Web Developer from May 2020 - Present
 
-I helped write documentation and redesign the website for the Libretime project. As part
-of that redesign, I helped the project migrate from the *Mkdocs* framework to *Jekyll*, 
-which was more flexible for our needs. I am currently working with a team of core contributors 
-to put together Libretime's 3.0.0 beta release.
+Led the effort to rewrite the project's documentation from scratch, including a site redesign using Jekyll, a static site generator. Contributed features and bug fixes to the source code, enhancing the broadcast experience of hundreds of radio stations around the globe.
 
-Skills: *Git*, *Github*, *Jekyll*, *Bash Scripting*, *Multipass*, *HTML*, *CSS*, *Bootstrap*
+Skills: *Git*, *Github*, *Jekyll*, *Bash Scripting*, *HTML*, *CSS*, *JavaScript*
 
 ### Chi Alpha Christian Fellowship
 
@@ -30,31 +45,10 @@ Spotify, or wherever you get your podcasts.
 Skills: *Davinci Resolve*, *Premere Pro*, *Blender*, *dSLR Video Production*,
 *Live sound mixing*, *Instagram*, *Canva*, *Podcast production*, *Audio editing*
 
-### WRIR 97.3 FM
-
-> Engineer from October 2019 - November 2020
-
-Filled multiple roles, including managing live playout, deploying on-prem services,
-training volunteers, performing routine maintenance, and fixing equipment,
-to keep the station running smoothly before and during the Coronavirus pandemic.
-Known for problem solving and gentle coaching.
-
-Skills: *Radio Systems Consoles*, *Ubuntu Server*, *Bash Scripting*, *Git*, *Windows 10*,
-*Adobe Audition*, *Libretime*, *Audio Engineering*
-
-### Barista and Supervisor at Starbucks Coffee Company
-
-> Barista from October 2015 - June 2017, Shift Supervisor from June 2017 - January 2018
-
-As a Barista, I was fully involved in the customer’s experience, from taking orders to making drinks to general upkeep of the store. As a Shift Supervisor, I took on the responsibilities of handling cash, managing inventory and training Baristas to make every moment right. I became a Certified Food Safety Manager as part of my promotion.
-
-Skills: *Customer service*, *Cash handling*, *Training and supervising a group of 2-4 employees*, 
-*Expertly making coffee (helpful for any internship,* [wink, wink](/contact)*)*
-
 ## Education
 
 ### Virginia Commonwealth University
 
-> Fall 2019 - Present
+> B.S. in Mass Communications, Digital Journalism concentration
 
-I'm working towards a B.S. in Digital Journalism. I expect to graduate at the end of the Spring or Summer 2021 semester.
+I expect to graduate at the end of the Spring 2021 semester.
