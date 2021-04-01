@@ -5,7 +5,7 @@ layout: post
 category: multimedia
 img: /images/feeling-distance-cover.jpeg
 caption: Taylor Colimore (right) films N'dea Harris (left) during the *Feeling Distance* performance (Photo by Zachary Klosko)
-excerpt: The coronavirus pandemic made live performances a challenge for Dance majors, confining them to their homes, connected only by their computers. VCUarts Kinetic Imaging Professor Dr. Kate Sicchio decided to meet these challenges head-on by designing a performance for the internet.
+excerpt: A VCU professor’s Wi-Fi enabled costumes helped dancers connect with their audience while social distancing.
 ---
 
 RICHMOND, Va. -- A unique performance is taking place inside VCU’s Grace Street Theater. Two dancers perform on stage, surrounded by a camerawoman, production assistants, technical directors, laptops and a producer. The rest of the theater is empty.
