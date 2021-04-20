@@ -29,9 +29,9 @@ Skills: *Radio Systems Consoles*, *Linux*, *Docker*, *Bash Scripting*, *Git*, *A
 
 > Documentation Writer, Frontend Web Developer from May 2020 - Present
 
-Led the effort to rewrite the project's documentation from scratch, including a site redesign using Jekyll, a static site generator. Contributed features and bug fixes to the source code, enhancing the broadcast experience of hundreds of radio stations around the globe.
+I led the effort to rewrite the project's documentation from scratch, including a site redesign using Jekyll, a static site generator. Contributed features and bug fixes to the source code, enhancing the broadcast experience of hundreds of radio stations around the globe.
 
-Skills: *Git*, *Github*, *Jekyll*, *Bash Scripting*, *HTML*, *CSS*, *JavaScript*
+Skills: *Git*, *Github*, *Jekyll*, *HTML*, *CSS*, *JavaScript*
 
 ### Chi Alpha Christian Fellowship
 
