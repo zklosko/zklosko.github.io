@@ -1,13 +1,15 @@
 ---
 title: "'There Is No Context': General Assembly Votes To Remove Byrd Statue"
-date: 2021-02-23T12:33:46+10:00
+date: 2021-02-23T12:33:46.000+10:00
 layout: post
 category: news
-img: /images/byrd-statue.jpg
-caption: Byrd served as Virginia’s governor from 1926 to 1930 and as a U.S. senator from 1933 to 1965. | VCU CNS file photo. 
-excerpt: The Virginia General Assembly has voted to remove the statue of former U.S. Sen. Harry F. Byrd Sr. from Capitol Square, the area around the Virginia State Capitol.
----
+img: "/images/byrd-statue.jpg"
+caption: Byrd served as Virginia’s governor from 1926 to 1930 and as a U.S. senator
+  from 1933 to 1965. (VCU CNS file photo)
+excerpt: The Virginia General Assembly has voted to remove the statue of former U.S.
+  Sen. Harry F. Byrd Sr. from Capitol Square, the area around the Virginia State Capitol.
 
+---
 RICHMOND, Va. -- The Virginia General Assembly has voted to remove the statue of former U.S. Sen. Harry F. Byrd Sr. from Capitol Square, the area around the Virginia State Capitol.
 
 [House Bill 2208](https://lis.virginia.gov/cgi-bin/legp604.exe?ses=212&typ=bil&val=hb2208), introduced by Del. Jay Jones, D-Norfolk, instructs the Department of General Services to place the statue in storage until the General Assembly chooses its final location. The bill passed the House in late January on a 63-34 vote, while the Senate approved the measure Tuesday on a 36-3 vote.
