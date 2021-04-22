@@ -5,8 +5,8 @@ layout: page
 bodyClass: page-about
 ---
 
-![](/images/zack-hat.png)
-> Photo by Zachary Klosko
+![](/images/zack.jpg)
+> Photo by Elaine Evans
 
 Zachary Klosko is a Richmond-based writer and broadcast engineer.
 He is currently pursuing a degree in Digital Journalism at Virginia Commonwealth University. Outside of class, he keeps busy with A/V production, keeping WRIR (a Richmond community radio station) running, and contributing to open-source software on Github.
@@ -17,4 +17,4 @@ He also had the opportunity to deploy Libretime, an open-source radio automation
 
 When he isn't working hard to advance the field of journalism and storytelling at the community level, he likes baking bread from scratch, biking through the city, and blasting disco house in the shower. If you want to buy him a coffee, he likes dark roasts and vanilla lattes.
 
-He is available for hire. [Contact him here](/contact).
+He is available for hire. [Contact him](/contact) or [download his resume](/assets/Zachary_Klosko_Resume.docx).

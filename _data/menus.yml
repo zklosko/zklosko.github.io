@@ -5,22 +5,19 @@ main:
   - name: "Multimedia"
     url: "/multimedia/"
     weight: 3
-  - name: "Resume"
-    url: "/resume/"
-    weight: 4
   - name: "About"
     url: "/about/"
-    weight: 5
+    weight: 4
   - name: "Contact"
     url: "/contact/"
-    weight: 6
+    weight: 5
 
 footer:
   - name: "Home"
     url: "/"
     weight: 1
   - name: "Resume"
-    url: "/resume/"
+    url: "/assets/Zachary_Klosko_Resume.docx"
     weight: 2
   - name: "Contact"
     url: "/contact/"
