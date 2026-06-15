@@ -1,0 +1,50 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Hi, I'm Zack!</h1>
+      <p>
+        I like building A/V things. I currently work at Hope Church in Richmond,
+        VA, making services hum and creating special places for students to
+        belong and be themselves. Software development, building automation, and
+        3D printing somehow fall into "other duties as <small>self-</small
+        >assigned".
+      </p>
+      <p>Here are some projects I've been busy with:</p>
+      <ul>
+        <li>
+          <a href="https://github.com/bitfocus/companion-module-etc-echo"
+            >ETC Echo</a
+          > module for Companion
+        </li>
+        <li>
+          <a href="https://github.com/bitfocus/companion-module-allenheath-ahm"
+            >Allen & Heath AHM</a
+          > module for Companion
+        </li>
+        <li>
+          <a
+            href="https://github.com/bitfocus/companion-module-obsidiancontrol-onyx"
+            >Onyx (telnet)</a
+          > module for Companion
+        </li>
+        <li>
+          A <a href="https://zklosko.github.io/onyx-bpm-calc">BPM calculator</a> for
+          Onyx's FX engine
+        </li>
+      </ul>
+    </main>
+    <Footer />
+  </body>
+</html>
