@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Basic.astro";
+import PagefindConfig from "astro-pagefind/components/PagefindConfig.astro";
+---
+
+<PagefindConfig />
+
+<Layout
+  title="Search"
+  description="Search this website"
+  pubDate={new Date("May 31 2026")}
+>
+  <pagefind-input autofocus="true"></pagefind-input>
+  <pagefind-summary></pagefind-summary>
+  <pagefind-results max-results="10"></pagefind-results>
+</Layout>

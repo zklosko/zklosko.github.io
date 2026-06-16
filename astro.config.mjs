@@ -3,13 +3,14 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { defineConfig, fontProviders } from "astro/config";
+import pagefind from "astro-pagefind";
 
 import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://zklosko.github.io",
-  integrations: [mdx(), sitemap(), icon()],
+  integrations: [mdx(), sitemap(), icon(), pagefind()],
   fonts: [
     {
       provider: fontProviders.local(),
