@@ -11,10 +11,22 @@ const blog = defineCollection({
       title: z.string(),
       description: z.string(),
       // Transform string to Date object
-      pubDate: z.coerce.date(),
+      pubDate: z.coerce.date().optional(),
       updatedDate: z.coerce.date().optional(),
       heroImage: z.optional(image()),
     }),
 });
 
-export const collections = { blog };
+const projects = defineCollection({
+  loader: glob({ base: "./src/content/projects", pattern: "**/*.{md,mdx}" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    url: z.url().optional(),
+    github: z.url().optional(),
+    tags: z.array(z.string()).default([]),
+    featured: z.boolean().default(false),
+  }),
+});
+
+export const collections = { blog, projects };
