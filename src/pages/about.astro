@@ -1,14 +1,20 @@
 ---
 import AboutHeroImage from "../assets/christmasEve2023-10.jpg";
 import Layout from "../layouts/Basic.astro";
+import Figure from "../components/Figure.astro";
 ---
 
 <Layout
   title="Zachary Klosko"
   description="Zack is building really cool things"
-  pubDate={new Date("May 31 2026")}
-  heroImage={AboutHeroImage}
 >
+  <Figure
+    src={AboutHeroImage}
+    alt="Picture of the author mixing monitors backstage at the Altria Theater in downtown Richmond, VA"
+    caption="Zack mixing monitors backstage at the Altria Theater in downtown Richmond, VA."
+    creditName="Jake Roth"
+  />
+
   <p>
     Zachary Klosko is a Richmond-based production engineer building tools,
     workflows, and systems for live events.

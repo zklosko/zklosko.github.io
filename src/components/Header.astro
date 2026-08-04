@@ -2,67 +2,117 @@
 import { SITE_TITLE } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
 import { Icon } from "astro-icon/components";
+import SocialLinks from "./SocialLinks.astro";
 ---
 
 <header>
-  <nav>
-    <h2><a href="/">{SITE_TITLE}</a></h2>
-    <div class="internal-links">
+  <div class="header-inner">
+    <div class="logo"><span class="logo-mark"></span>{SITE_TITLE}</div>
+    <nav>
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
-      <HeaderLink href="/search">Search</HeaderLink>
+    </nav>
+    <div class="socials">
+      <SocialLinks />
+      <pagefind-modal-trigger class="nav-search" compact hide-shortcut
+        >Search</pagefind-modal-trigger
+      >
     </div>
-    <div class="social-links">
-      <a href="https:/www.linkedin.com/in/zklosko" target="_blank">
-        <span class="sr-only">LinkedIn</span>
-        <Icon name="mdi:linkedin" width="32" height="32" />
-      </a>
-      <a href="https://github.com/zklosko" target="_blank">
-        <span class="sr-only">GitHub</span>
-        <Icon name="mdi:github" width="32" height="32" />
-      </a>
-    </div>
-  </nav>
+  </div>
 </header>
 <style>
   header {
-    margin: 0;
-    padding: 0 1em;
-    background: white;
-    box-shadow: 0 2px 8px rgba(var(--black), 5%);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
   }
-  h2 {
-    margin: 0;
-    font-size: 1em;
-  }
-
-  h2 a,
-  h2 a.active {
-    text-decoration: none;
-  }
-  nav {
+  .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20px 32px;
+    max-width: 980px;
+    margin: 0 auto;
   }
-  nav a {
-    padding: 1em 0.5em;
-    color: var(--black);
-    border-bottom: 4px solid transparent;
-    text-decoration: none;
-  }
-  nav a.active {
-    text-decoration: none;
-    border-bottom-color: var(--accent);
-  }
-  .social-links,
-  .social-links a {
+  .logo {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
     display: flex;
+    align-items: center;
+    gap: 10px;
   }
+  .logo-mark {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    background: linear-gradient(
+      135deg,
+      var(--amber),
+      var(--teal) 55%,
+      var(--violet)
+    );
+    flex-shrink: 0;
+  }
+  nav {
+    display: flex;
+    gap: 28px;
+  }
+  .socials {
+    display: flex;
+    gap: 14px;
+  }
+  .socials a {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: var(--ink-soft);
+    transition:
+      background 0.15s,
+      color 0.15s;
+  }
+  .socials a:hover {
+    background: var(--amber-tint);
+    color: var(--ink);
+  }
+  .socials svg {
+    width: 32px;
+    height: 32px;
+  }
+  .nav-search {
+    font: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    background: none;
+    border: none;
+    padding: 0 0 4px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition:
+      color 0.15s,
+      border-color 0.15s;
+  }
+  .nav-search:hover {
+    --pf-text: var(--ink);
+  }
+
   @media (max-width: 720px) {
-    .social-links {
+    .socials {
       display: none;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    header {
+      background: var(--bg);
     }
   }
 </style>

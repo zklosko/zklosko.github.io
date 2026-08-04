@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import PagefindConfig from "astro-pagefind/components/PagefindConfig.astro";
 
 interface Props {
   title: string;
@@ -11,18 +12,18 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
   </head>
-
   <body>
+    <PagefindConfig />
     <Header />
-
     <main>
       <slot />
     </main>
-
     <Footer />
+    <pagefind-modal></pagefind-modal>
   </body>
 </html>

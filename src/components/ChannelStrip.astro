@@ -1,0 +1,70 @@
+---
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+
+const categoryColor: Record<string, string> = {
+  lighting: "var(--amber)",
+  audio: "var(--teal)",
+  tool: "var(--violet)",
+};
+
+const fallbackColor = "var(--line)";
+
+const counts = projects.reduce<Record<string, number>>((acc, project) => {
+  const key = project.data.category.toLowerCase();
+  acc[key] = (acc[key] ?? 0) + 1;
+  return acc;
+}, {});
+
+const total = projects.length;
+
+let cursor = 0;
+const stops: string[] = [];
+const legendParts: string[] = [];
+
+for (const [category, count] of Object.entries(counts)) {
+  const color = categoryColor[category] ?? fallbackColor;
+  const start = cursor;
+  const end = cursor + (count / total) * 100;
+
+  stops.push(`${color} ${start}%`, `${color} ${end}%`);
+  legendParts.push(category.toUpperCase());
+
+  cursor = end;
+}
+
+if (cursor < 100) {
+  stops.push(`${fallbackColor} ${cursor}%`, `${fallbackColor} 100%`);
+}
+
+const gradient = `linear-gradient(90deg, ${stops.join(", ")})`;
+const legend =
+  legendParts.length > 0
+    ? `SIGNAL CHAIN — ${legendParts.join(" / ")}`
+    : "SIGNAL CHAIN";
+---
+
+<div class="channel-strip" data-legend={legend}></div>
+
+<style define:vars={{ gradient }}>
+  .channel-strip {
+    height: 5px;
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 56px;
+    background: var(--gradient);
+    position: relative;
+  }
+  .channel-strip::after {
+    content: attr(data-legend);
+    position: absolute;
+    top: 12px;
+    right: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    opacity: 0.55;
+  }
+</style>
