@@ -5,43 +5,64 @@
  */
 
 :root {
-  --accent: #6366f1;
-  --accent-dark: #000d8a;
   --black: 15, 18, 25;
   --gray: 96, 115, 159;
   --gray-light: 229, 233, 240;
   --gray-dark: 34, 41, 57;
-  --gray-gradient: rgba(var(--gray-light), 50%), #fff;
-  --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   --radius: 8px;
-  --space-1: 0.5rem;
-  --space-2: 1rem;
-  --space-3: 1.5rem;
-  --space-4: 2rem;
-  --space-5: 3rem;
-  --space-6: 5rem;
+  --bg: #faf9f6;
+  --surface: #ffffff;
+  --ink: #16181d;
+  --ink-soft: #565b66;
+  --line: #e7e5df;
+  --amber: #e8a13d; /* lighting */
+  --teal: #2e7d8c; /* audio */
+  --violet: #7a6fd1; /* software/tools */
+  --amber-tint: #fbf1df;
+  --teal-tint: #e4eff1;
+  --violet-tint: #eceafa;
+  --pf-text: var(--ink);
+  --pf-text-secondary: var(--ink-soft);
+  --pf-text-muted: var(--ink-soft);
+  --pf-background: var(--surface);
+  --pf-border: var(--line);
+  --pf-hover: var(--amber-tint);
+  --pf-mark: var(--ink);
+  --pf-font: "Inter", sans-serif;
+  --pf-border-radius: 10px;
+  --pf-modal-backdrop: rgba(15, 18, 25, 0.4);
+  --pf-modal-max-width: 600px;
+  --pf-outline-focus: var(--amber);
+}
+
+* {
+  box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: var(--font-atkinson);
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
   margin: 0;
-  padding: 0;
-  text-align: left;
-  background: #fafafa;
-  background-size: 100% 600px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  color: rgb(var(--gray-dark));
-  font-size: 20px;
-  line-height: 1.7;
+  background: var(--bg);
+  /* background-size: 100% 600px; */
+  /* word-wrap: break-word; */
+  /* overflow-wrap: break-word; */
+  color: var(--ink);
+  /* font-size: 20px; */
+  /* line-height: 1.7; */
 }
 main {
   width: 720px;
-  max-width: calc(100% - 2em);
-  margin: auto;
-  padding: 3em 1em;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
 }
 h1,
 h2,
@@ -75,76 +96,32 @@ b {
   font-weight: 700;
 }
 a {
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.18em;
+  color: inherit;
+  text-decoration: none;
   transition:
     color 0.2s,
     text-decoration-color 0.2s;
 }
-a:hover {
-  text-decoration-color: transparent;
-}
-a,
-button {
-  transition:
-    color 0.2 ease,
-    background-color 0.2 ease,
-    transform 0.15 ease;
-}
-button:hover,
-.button:hover {
-  transform: translateY(-2px);
-}
-p {
-  margin-bottom: 1.5em;
-  max-width: 65ch;
-}
-.prose p {
-  margin-bottom: 2em;
-}
-textarea {
-  width: 100%;
-  font-size: 16px;
-}
-input {
-  font-size: 16px;
-}
-table {
-  width: 100%;
-}
 img {
   max-width: 100%;
   height: auto;
-  border-radius: var(--radius);
+  display: block;
 }
-code {
-  padding: 2px 5px;
-  background-color: rgb(var(--gray-light));
-  border-radius: 2px;
-}
-pre {
-  padding: 1.5em;
-  border-radius: 8px;
-}
-pre > code {
-  all: unset;
-}
-blockquote {
-  border-left: 4px solid var(--accent);
-  padding: 0 0 0 20px;
-  margin: 0;
-  font-size: 1.333em;
-}
-hr {
-  border: none;
-  border-top: 1px solid rgb(var(--gray-light));
-}
+
 @media (max-width: 720px) {
-  body {
-    font-size: 18px;
+  .wrap,
+  .header-inner {
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  main {
-    padding: 1em;
+  h1.display {
+    font-size: 40px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  nav {
+    display: none;
   }
 }
 
@@ -174,22 +151,42 @@ hr {
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
+    /* legacy triplets, still used by global h1–h6 */
     --black: 236, 236, 236;
     --gray-dark: 220, 220, 220;
     --gray: 160, 170, 190;
     --gray-light: 45, 45, 50;
-    --gray-gradient: #121212, #121212;
+
+    /* core tokens used across every component */
+    --bg: #121212;
+    --bg-rgb: 18, 18, 18;
+    --surface: #1d1d1d;
+    --ink: #ececec;
+    --ink-soft: #a0a0a0;
+    --line: #333333;
+
+    /* accent tints — darkened so amber/teal/violet text stays readable on them */
+    --amber-tint: #3a2f14;
+    --teal-tint: #163338;
+    --violet-tint: #2b2740;
+
+    /* Pagefind */
+    --pf-text: #ececec;
+    --pf-text-secondary: #a0a0a0;
+    --pf-background: #1d1d1d;
+    --pf-border: #333;
+    --pf-hover: #252525;
   }
 
   body {
-    background: #121212;
+    background: var(--bg);
   }
 
   code {
-    background-color: rgb(var(--gray-light));
+    background-color: var(--ink-soft);
   }
 
   hr {
-    border-top-color: rgb(var(--gray-light));
+    border-top-color: var(--ink-soft);
   }
 }
