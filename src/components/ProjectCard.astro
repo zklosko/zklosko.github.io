@@ -1,114 +1,200 @@
 ---
-import { undefined } from "astro:schema";
-
 interface Props {
   title: string;
+  category: string;
   description: string;
   url: string;
+  github: string;
   tags?: string[];
   featured?: boolean;
 }
 
 const {
   title,
+  category,
   description,
   url,
+  github,
   tags = [],
   featured = false,
 }: Props = Astro.props;
+
+const categoryClass = category.toLowerCase();
+const categoryLabel = category.toUpperCase();
 ---
 
-<article class:list={{ card: true, featured }}>
-  <h3>
-    <a href={url}>{title}</a>
-  </h3>
-
-  <p>{description}</p>
-
-  {
-    tags.length > 0 && (
-      <ul class="tags">
-        {tags.map((tag) => (
-          <li>{tag}</li>
-        ))}
-      </ul>
-    )
-  }
-</article>
+<div class="card">
+  <div class={`card-art ${categoryClass}`}>
+    <span class={`chip ${categoryClass}`}>{categoryLabel}</span>
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">{title}</h3>
+    <p class="card-desc">{description}</p>
+    <div class="tags">
+      {tags.map((tag) => <span class="tag">{tag}</span>)}
+    </div>
+    <div class="card-links">
+      {
+        github && (
+          <a href={github}>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.91c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.36 1.12 2.94.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.79-4.58 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z" />
+            </svg>{" "}
+            Source
+          </a>
+        )
+      }
+      {
+        url && (
+          <a href={url}>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3l9 4.5v9L12 21l-9-4.5v-9L12 3zm0 2.24L5 8.62v6.76l7 3.38 7-3.38V8.62l-7-3.38zM11 9h2v2h2v2h-2v2h-2v-2H9v-2h2V9z" />
+            </svg>{" "}
+            Try it
+          </a>
+        )
+      }
+    </div>
+  </div>
+</div>
 
 <style>
   .card {
-    height: 100%;
-    padding: 1.5rem;
-    border: 1px solid rgb(var(--grey-light));
-    border-radius: 12px;
-    background: white;
-    /* box-shadow: 0 4px 12px rgb(0 0 0 / 5%); */
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     transition:
-      transform 0.2s ease,
-      box-shadow 0.2s ease,
-      border-color 0.2s ease;
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      border-color 0.18s ease;
   }
   .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgb(0 0 0 / 10%);
-    /* border-color: rgb(var(--gray)); */
-  }
-  .card.featured {
-    grid-column: span 2;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(20, 20, 20, 0.08);
+    border-color: transparent;
   }
 
-  a {
-    display: block;
-    height: 100%;
-    color: inherit;
-    text-decoration: none;
+  .card-art {
+    height: 108px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 14px 16px;
+  }
+  .card-art.lighting {
+    background: repeating-linear-gradient(
+      115deg,
+      #f6d9a3,
+      #f6d9a3 2px,
+      #f1c87b 2px,
+      #f1c87b 4px
+    );
+    background-color: var(--amber-tint);
+  }
+  .card-art.audio {
+    background: repeating-linear-gradient(
+      115deg,
+      #bfdde2,
+      #bfdde2 2px,
+      #a4cdd4 2px,
+      #a4cdd4 4px
+    );
+    background-color: var(--teal-tint);
+  }
+  .card-art.tool {
+    background: repeating-linear-gradient(
+      115deg,
+      #d6d1f3,
+      #d6d1f3 2px,
+      #c3bcef 2px,
+      #c3bcef 4px
+    );
+    background-color: var(--violet-tint);
   }
 
-  h3 {
-    margin-bottom: 0.5rem;
+  .chip {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 4px 9px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(2px);
+  }
+  .chip.lighting {
+    color: #8a5d0e;
+  }
+  .chip.audio {
+    color: #175a66;
+  }
+  .chip.tool {
+    color: #4a3fa0;
   }
 
-  h3 a {
-    color: inherit;
-    text-decoration: none;
+  .card-body {
+    padding: 20px 22px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
-
-  h3 a:hover {
-    color: var(--accent);
+  .card-title {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 0 8px;
   }
-
-  p {
-    margin: 0 0 1rem;
-    color: rgb(var(--gray));
+  .card-desc {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0 0 18px;
+    flex: 1;
   }
-
   .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    gap: 6px;
+    margin-bottom: 16px;
   }
-
-  .tags li {
-    padding: 0.25rem 0.6rem;
-    border-radius: 999px;
-    background: rgb(var(--gray-light));
-    font-size: 0.85rem;
+  .tag {
+    font-size: 11.5px;
     font-weight: 500;
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: var(--line);
+    color: var(--ink-soft);
+  }
+  .card-links {
+    display: flex;
+    gap: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+  .card-links a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    transition: color 0.15s;
+  }
+  .card-links a:hover {
+    color: var(--ink);
+  }
+  .card-links svg {
+    width: 14px;
+    height: 14px;
   }
 
   @media (prefers-color-scheme: dark) {
-    .card {
-      background: #1d1d1d;
-      border-color: #333;
+    .card:hover {
       box-shadow: none;
-    }
-
-    .tags li {
-      background: #333;
     }
   }
 </style>

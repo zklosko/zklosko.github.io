@@ -1,7 +1,8 @@
 ---
 title: "AHM Companion Module"
+category: "Audio"
 description: "A Bitfocus Companion module controlling Allen & Heath AHM matrix mixers."
-url: "https://github.com/bitfocus/companion-module-allenheath-ahm"
+github: "https://github.com/bitfocus/companion-module-allenheath-ahm"
 tags:
   - DSP
   - Audio

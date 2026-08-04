@@ -1,7 +1,8 @@
 ---
 title: "Onyx Companion Module"
+category: "Lighting"
 description: "A Bitfocus Companion module allowing for show automation of Obsidian Onyx lighting consoles."
-url: "https://github.com/bitfocus/companion-module-obsidiancontrol-onyx"
+github: "https://github.com/bitfocus/companion-module-obsidiancontrol-onyx"
 tags:
   - Onyx
   - Lighting

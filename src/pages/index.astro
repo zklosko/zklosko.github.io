@@ -1,77 +1,124 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import ChannelStrip from "../components/ChannelStrip.astro";
 import { getCollection } from "astro:content";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import Hero from "../components/Hero.astro";
 
 const projects = await getCollection("projects");
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const latestPost = posts[0];
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <h1>Hi, I'm Zack!</h1>
-      <p class="tagline">
-        Software developer and production engineer building tools for live
-        events.
-      </p>
-      <p>
-        I work at Hope Church in Richmond, VA, making services hum and creating
-        a special place for students to belong and be themselves. Software
-        development, building automation, and 3D printing somehow fall into
-        "other duties as assigned".
-      </p>
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <Hero />
 
-      <h2>Projects</h2>
+  {
+    latestPost && (
+      <a href={`/blog/${latestPost.id}/`} class="latest-post">
+        <span class="eyebrow-small">Latest post</span>
+        <h2>{latestPost.data.title}</h2>
+        <p class="desc">{latestPost.data.description}</p>
+        <p class="date">
+          <FormattedDate date={latestPost.data.pubDate} />
+        </p>
+      </a>
+    )
+  }
 
-      <div class="projects">
-        {
-          projects.map((project) => (
-            <ProjectCard
-              title={project.data.title}
-              description={project.data.description}
-              url={project.data.url}
-              tags={project.data.tags}
-              featured={project.data.featured}
-            />
-          ))
-        }
-      </div>
-    </main>
-    <Footer />
-  </body>
-</html>
+  <ChannelStrip />
+
+  <div class="section-head">
+    <h2 class="display">Projects</h2>
+  </div>
+
+  <div class="grid">
+    {
+      projects.map((project) => (
+        <ProjectCard
+          title={project.data.title}
+          category={project.data.category}
+          description={project.data.description}
+          url={project.data.url}
+          github={project.data.github}
+          tags={project.data.tags}
+          featured={project.data.featured}
+        />
+      ))
+    }
+  </div>
+</BaseLayout>
 
 <style>
-  h1 {
-    font-size: clamp(3rem, 8vw, 4.5rem);
-    letter-spacing: -0.04em;
-    margin-bottom: 0;
+  .latest-post {
+    display: block;
+    padding: 24px 26px;
+    margin: 12px 0 60px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--teal);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease;
   }
-  .tagline {
-    margin-top: 0.75rem;
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
+  .latest-post:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(20, 20, 20, 0.08);
+  }
+  .eyebrow-small {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
     font-weight: 500;
-    line-height: 1.4;
-    color: rgb(var(--gray));
-    max-width: 45ch;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--teal);
   }
-  .projects {
+  .latest-post h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    margin: 8px 0 8px;
+    color: var(--ink);
+  }
+  .latest-post .desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+  }
+  .latest-post .date {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+  h2.display {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    margin: 0;
+  }
+  .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
-    row-gap: 3.5rem;
-    margin-top: 2rem;
+    gap: 22px;
+    padding-bottom: 90px;
   }
   @media (max-width: 720px) {
-    .projects {
+    .grid {
       grid-template-columns: 1fr;
     }
   }

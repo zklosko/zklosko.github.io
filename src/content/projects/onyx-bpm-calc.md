@@ -1,7 +1,9 @@
 ---
 title: "Onyx BPM Calculator"
+category: "Lighting"
 description: "A calculator for finding BPM timing values for Onyx lighting effects."
 url: "https://zklosko.github.io/onyx-bpm-calc"
+github: "https://github.com/zklosko/onyx-bpm-calc"
 tags:
   - Vue
   - Lighting
