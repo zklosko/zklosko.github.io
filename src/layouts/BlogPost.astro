@@ -1,90 +1,158 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
-import FormattedDate from "../components/FormattedDate.astro";
-import Header from "../components/Header.astro";
+import BaseLayout from "./BaseLayout.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+const dateFormat: Intl.DateTimeFormatOptions = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={description} />
-    <style>
-      main {
-        width: calc(100% - 2em);
-        max-width: 100%;
-        margin: 0;
-      }
-      .hero-image {
-        width: 100%;
-      }
-      .hero-image img {
-        display: block;
-        margin: 0 auto;
-        border-radius: 12px;
-        box-shadow: var(--box-shadow);
-      }
-      .prose {
-        width: 720px;
-        max-width: calc(100% - 2em);
-        margin: auto;
-        padding: 1em;
-        color: rgb(var(--gray-dark));
-      }
-      .title {
-        margin-bottom: 1em;
-        padding: 1em 0;
-        text-align: center;
-        line-height: 1;
-      }
-      .title h1 {
-        margin: 0 0 0 0;
-      }
-      .date {
-        margin-bottom: 1em;
-        color: rgb(var(--gray));
-      }
-      .last-updated-on {
-        font-style: italic;
-      }
-    </style>
-  </head>
-
-  <body>
-    <Header />
-    <main>
-      <article>
+<BaseLayout title={title} description={description}>
+  <article>
+    {
+      heroImage && (
         <div class="hero-image">
-          {
-            heroImage && (
-              <Image width={1020} height={510} src={heroImage} alt={title} />
-            )
-          }
+          <Image width={1020} height={510} src={heroImage} alt="" />
         </div>
-        <div class="prose">
-          <div class="title">
-            <h1>{title}</h1>
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
-            </div>
-            <hr />
-          </div>
-          <slot />
-        </div>
-      </article>
-    </main>
-    <Footer />
-  </body>
-</html>
+      )
+    }
+    <div class="prose">
+      <div class="title">
+        <h1 class="display">{title}</h1>
+        {
+          pubDate && (
+            <p class="date">
+              {pubDate.toLocaleDateString("en-US", dateFormat)}
+              {updatedDate && (
+                <span class="last-updated-on">
+                  {" "}
+                  (Updated:{" "}
+                  {updatedDate.toLocaleDateString("en-US", dateFormat)})
+                </span>
+              )}
+            </p>
+          )
+        }
+        <hr />
+      </div>
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  article {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 76px 32px 90px;
+  }
+  .hero-image {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(20, 20, 20, 0.08);
+  }
+  .title {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  h1.display {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+  }
+  .date {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0 0 20px;
+  }
+  .last-updated-on {
+    font-style: italic;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 0 auto;
+    width: 60px;
+  }
+  .prose {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+  .prose :global(strong) {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .prose :global(h2) {
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--ink);
+    font-size: 28px;
+    margin: 40px 0 16px;
+  }
+  .prose :global(a) {
+    color: var(--teal);
+    text-decoration: underline;
+    text-decoration-color: var(--teal-tint);
+    text-underline-offset: 3px;
+  }
+  .prose :global(a:hover) {
+    text-decoration-color: var(--teal);
+  }
+  .prose :global(img) {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    margin: 24px auto;
+    box-shadow: 0 12px 28px rgba(20, 20, 20, 0.08);
+  }
+  .prose :global(blockquote) {
+    margin: 32px 0;
+    padding: 4px 0 4px 24px;
+    border-left: 3px solid var(--teal);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .prose :global(blockquote p) {
+    margin: 0;
+  }
+
+  .prose :global(blockquote p + p) {
+    margin-top: 12px;
+  }
+
+  .prose :global(blockquote cite) {
+    display: block;
+    margin-top: 12px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--ink-soft);
+  }
+
+  .prose :global(blockquote cite)::before {
+    content: "— ";
+  }
+</style>

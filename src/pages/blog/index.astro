@@ -1,10 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import BaseHead from "../../components/BaseHead.astro";
-import Footer from "../../components/Footer.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
-import Header from "../../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 
 const posts = (await getCollection("blog")).sort(
@@ -14,93 +12,100 @@ const posts = (await getCollection("blog")).sort(
 const [featuredPost, ...otherPosts] = posts;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <section>
-        {
-          featuredPost && (
-            <div class="featured">
-              <a href={`/blog/${featuredPost.id}`}>
-                {featuredPost.data.heroImage && (
-                  <Image
-                    width={1020}
-                    height={510}
-                    src={featuredPost.data.heroImage}
-                    alt={featuredPost.data.title}
-                  />
-                )}
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <section class="blog-index">
+    {
+      featuredPost && (
+        <div class="featured">
+          <a href={`/blog/${featuredPost.id}`}>
+            {featuredPost.data.heroImage && (
+              <Image
+                width={1020}
+                height={510}
+                fit="cover"
+                src={featuredPost.data.heroImage}
+                alt={featuredPost.data.title}
+              />
+            )}
 
-                <h2>{featuredPost.data.title}</h2>
-                <p>{featuredPost.data.description}</p>
-                <p class="date">
-                  <FormattedDate date={featuredPost.data.pubDate} />
-                </p>
-              </a>
-            </div>
-          )
-        }
-        <div class="posts">
-          {
-            otherPosts.map((post) => (
-              <article>
-                <a href={`/blog/${post.id}/`}>
-                  {post.data.heroImage && (
-                    <Image
-                      width={720}
-                      height={360}
-                      src={post.data.heroImage}
-                      alt={post.data.title}
-                    />
-                  )}
-                  <h3>{post.data.title}</h3>
-                  <p>{post.data.description}</p>
-                  <p class="date">
-                    <FormattedDate date={post.data.pubDate} />
-                  </p>
-                </a>
-              </article>
-            ))
-          }
+            <h2>{featuredPost.data.title}</h2>
+            <p>{featuredPost.data.description}</p>
+            <p class="date">
+              <FormattedDate date={featuredPost.data.pubDate} />
+            </p>
+          </a>
         </div>
-      </section>
-    </main>
-    <Footer />
-  </body>
-</html>
+      )
+    }
+    <div class="posts">
+      {
+        otherPosts.map((post) => (
+          <article>
+            <a href={`/blog/${post.id}/`}>
+              {post.data.heroImage && (
+                <Image
+                  width={720}
+                  height={360}
+                  src={post.data.heroImage}
+                  alt={post.data.title}
+                />
+              )}
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+              <p class="date">
+                <FormattedDate date={post.data.pubDate} />
+              </p>
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
 
 <style>
-  main {
-    width: 960px;
+  .featured a > :global(img),
+  .posts article > :global(img) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+    display: block;
+  }
+  .blog-index {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 76px 32px 90px;
   }
   .featured {
     margin-bottom: 4rem;
   }
   .featured a {
     text-decoration: none;
+    color: inherit;
+    display: block;
   }
   .featured img {
     display: block;
     width: 100%;
-    border-radius: 12px;
-    box-shadow: var(--box-shadow);
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(20, 20, 20, 0.08);
   }
   .featured h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
+    color: var(--ink);
   }
-  .title {
-    margin: 0;
-    color: rgb(var(--black));
-    line-height: 1;
+  .desc {
+    margin: 0 0 0.5rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
   }
   .date {
     margin: 0;
+    font-size: 13px;
     color: rgb(var(--gray));
   }
   .posts {
@@ -109,6 +114,11 @@ const [featuredPost, ...otherPosts] = posts;
     column-gap: 2rem;
     row-gap: 3rem;
   }
+  .posts a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
   .posts article img {
     display: block;
     width: 100%;
@@ -116,22 +126,23 @@ const [featuredPost, ...otherPosts] = posts;
     margin-bottom: 0.75rem;
   }
   .posts h3 {
-    margin: 0;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    margin: 0 0 0.4rem;
+    color: var(--ink);
   }
   @media (max-width: 720px) {
-    ul {
-      gap: 0.5em;
+    .posts {
       grid-template-columns: 1fr;
     }
-    ul li {
-      width: 100%;
-      text-align: center;
-    }
-    ul li:first-child {
-      margin-bottom: 0;
-    }
-    ul li:first-child .title {
+    .featured h2 {
       font-size: 1.563em;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .featured img,
+    .posts article img {
+      box-shadow: none;
     }
   }
 </style>

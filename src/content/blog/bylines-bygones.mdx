@@ -5,6 +5,10 @@ pubDate: "Jun 12 2026"
 heroImage: "../../assets/hands-up.jpg"
 ---
 
+import Figure from "../../components/Figure.astro";
+import WaPoStory from "../../assets/no-quarantine-bill.png";
+import McClellanPresser from "../../assets/mcclellan-presser.jpg";
+
 I never planned to get a journalism degree. What I really wanted was to do creative things with media: recording music, taking photos, engineering a TV show, having a morning show on a popular radio station. Digital Journalism - the degree - was a safer way to "study" for one of those outcomes, each of which was getting significantly more competitive each day.
 
 The nature of being curious suited me well. I remember especially being curious about local politics, and was one of two (or maybe it was just me, I can't remember) students in my class who intentionally decided to report on local politics. I wanted to know how people ticked, why they believed the things they did - the psychological nature of it all. I was curious about the people themselves, and oh the people I got invited to meet.
@@ -15,11 +19,20 @@ While looking into how to install a free piece of open-source radio automation s
 
 Don't get me wrong, I still liked reporting. I got published in the Washington Post and Associated Press following legislation to increase the minimum wage in Virginia. I worked hard and found myself helping my teachers edit my classmates' articles, something I think I liked more than writing articles myself. But I also liked Linux, and Docker, and rewriting old Bash scripts to run in shiny new Docker containers, and then running those containers for hours in class on my minimum-spec Macbook Air 2015 to make sure they performed correctly. I didn't like Windows Server and the headaches Active Directory brought to the table, but I learned to appreciate them as soon as I started replacing them with "one-size-fits-most" services, even though it would be better for volunteers in the long run. As much as I found myself looking for interesting stories on Twitter (long before Elon purchased it) I found myself helping build, break, and rebuild the things others needed to tell stories relevant to them.
 
-![My story in The Washington Post](../../assets/no-quarantine-bill.png)
+<Figure
+  src={WaPoStory}
+  alt="My story in The Washington Post"
+  caption="Look, ma! I'm in The Washington Post!"
+/>
 
 The shift came from the "perfect storm" for student reporters in that era: COVID, the death of George Floyd, and the inevitable burnout of trying to cover all the bases while having to manage schoolwork, mental health, and finding a therapist we could afford after Student Counseling told us we needed to find someone else. I could go to interviews and press conferences, once as an invitation from a prominent gubernatorial candidate (who didn't win), but I couldn't write. I clawed myself through my reporting and schoolwork, only got published in smaller papers, and kept my head down while keeping the radio station running. I did graduate, but it felt like I barely made it.
 
-![Listening to Jennifer McClellan describe her vision for Virginia](../../assets/mcclellan-presser.jpg)
+<Figure
+  src={McClellanPresser}
+  alt="Listening to Jennifer McClellan describe her vision for Virginia"
+  caption="Jennifer McClellan describes her vision for Virginia during her campaign for governer in 2020."
+  creditName="Zachary Klosko"
+/>
 
 Politics and mass media were in the first stages of the war that politics would ultimately win, a depressing sight for a bright-eyed journalism student. Our teachers spoke honestly of the shifts going on in local and national media outlets, gave us tips on how to advocate for ourselves, and told us multiple times they honestly believed our generation would be the ones to make the change in how stories were reported, how we would be able to hold up ethics and integrity in ways that couldn't be taken away be investors, how we could make a difference.
 
