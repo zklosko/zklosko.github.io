@@ -18,9 +18,11 @@
   --amber: #e8a13d; /* lighting */
   --teal: #2e7d8c; /* audio */
   --violet: #7a6fd1; /* software/tools */
+  --rose: #c2557a;
   --amber-tint: #fbf1df;
   --teal-tint: #e4eff1;
   --violet-tint: #eceafa;
+  --rose-tint: #f7e3ea;
   --pf-text: var(--ink);
   --pf-text-secondary: var(--ink-soft);
   --pf-text-muted: var(--ink-soft);
@@ -169,6 +171,7 @@ img {
     --amber-tint: #3a2f14;
     --teal-tint: #163338;
     --violet-tint: #2b2740;
+    --rose-tint: #3a1f28;
 
     /* Pagefind */
     --pf-text: #ececec;

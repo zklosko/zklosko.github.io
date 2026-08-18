@@ -1,0 +1,64 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import BlogCard from "../../../../components/BlogCard.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const allTags = new Set<string>();
+  posts.forEach((post) => post.data.tags?.forEach((tag) => allTags.add(tag)));
+
+  return Array.from(allTags).map((tag) => ({ params: { tag } }));
+}
+
+const { tag } = Astro.params;
+
+const posts = (await getCollection("blog"))
+  .filter((post) => post.data.tags?.includes(tag!))
+  .sort(
+    (a, b) =>
+      (b.data.pubDate?.valueOf() ?? 0) - (a.data.pubDate?.valueOf() ?? 0),
+  );
+---
+
+<BaseLayout title={`#${tag} — Blog`} description={`Posts tagged ${tag}`}>
+  <div class="section">
+    <p class="eyebrow-small">Tag</p>
+    <h1 class="display">{tag}</h1>
+    <div class="grid">
+      {posts.map((post) => <BlogCard id={post.id} {...post.data} />)}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .section {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 76px 32px 90px;
+  }
+  .eyebrow-small {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 6px;
+  }
+  h1.display {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    margin: 0 0 32px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  @media (max-width: 720px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

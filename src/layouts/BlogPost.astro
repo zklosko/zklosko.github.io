@@ -2,20 +2,33 @@
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
+import PostTOC from "../components/PostTOC.astro";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">["data"] & {
+  headings: { depth: number; slug: string; text: string }[];
+};
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  postType,
+  headings,
+} = Astro.props;
 
 const dateFormat: Intl.DateTimeFormatOptions = {
   year: "numeric",
   month: "long",
   day: "numeric",
 };
+
+const showToc = postType === "guide" || postType === "tutorial";
 ---
 
 <BaseLayout title={title} description={description}>
-  <article>
+  <article class:list={["post", { "with-toc": showToc }]}>
     {
       heroImage && (
         <div class="hero-image">
@@ -23,26 +36,29 @@ const dateFormat: Intl.DateTimeFormatOptions = {
         </div>
       )
     }
-    <div class="prose">
-      <div class="title">
-        <h1 class="display">{title}</h1>
-        {
-          pubDate && (
-            <p class="date">
-              {pubDate.toLocaleDateString("en-US", dateFormat)}
-              {updatedDate && (
-                <span class="last-updated-on">
-                  {" "}
-                  (Updated:{" "}
-                  {updatedDate.toLocaleDateString("en-US", dateFormat)})
-                </span>
-              )}
-            </p>
-          )
-        }
-        <hr />
+    <div class="post-layout">
+      <div class="prose">
+        <div class="title">
+          <h1 class="display">{title}</h1>
+          {
+            pubDate && (
+              <p class="date">
+                {pubDate.toLocaleDateString("en-US", dateFormat)}
+                {updatedDate && (
+                  <span class="last-updated-on">
+                    {" "}
+                    (Updated:{" "}
+                    {updatedDate.toLocaleDateString("en-US", dateFormat)})
+                  </span>
+                )}
+              </p>
+            )
+          }
+          <hr />
+        </div>
+        <slot />
       </div>
-      <slot />
+      {showToc && <PostTOC headings={headings} />}
     </div>
   </article>
 </BaseLayout>
@@ -152,6 +168,136 @@ const dateFormat: Intl.DateTimeFormatOptions = {
     color: var(--ink-soft);
   }
 
+  .prose :global(blockquote cite)::before {
+    content: "— ";
+  }
+  .post {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 76px 32px 90px;
+  }
+  .post.with-toc {
+    max-width: 1020px;
+  }
+  .post-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .with-toc .post-layout {
+    grid-template-columns: minmax(0, 720px) 220px;
+    gap: 48px;
+    align-items: start;
+  }
+  @media (max-width: 960px) {
+    .with-toc .post-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .hero-image {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .hero-image :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(20, 20, 20, 0.08);
+  }
+  .title {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  h1.display {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+  }
+  .date {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0 0 20px;
+  }
+  .last-updated-on {
+    font-style: italic;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 0 auto;
+    width: 60px;
+  }
+  .prose {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    min-width: 0;
+  }
+  .prose :global(strong) {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .prose :global(h2) {
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--ink);
+    font-size: 28px;
+    margin: 40px 0 16px;
+    scroll-margin-top: 100px;
+  }
+  .prose :global(h3) {
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--ink);
+    font-size: 21px;
+    margin: 32px 0 12px;
+    scroll-margin-top: 100px;
+  }
+  .prose :global(a) {
+    color: var(--teal);
+    text-decoration: underline;
+    text-decoration-color: var(--teal-tint);
+    text-underline-offset: 3px;
+  }
+  .prose :global(a:hover) {
+    text-decoration-color: var(--teal);
+  }
+  .prose :global(img) {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    margin: 24px auto;
+    box-shadow: 0 12px 28px rgba(20, 20, 20, 0.08);
+  }
+  .prose :global(blockquote) {
+    margin: 32px 0;
+    padding: 4px 0 4px 24px;
+    border-left: 3px solid var(--teal);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .prose :global(blockquote p) {
+    margin: 0;
+  }
+  .prose :global(blockquote p + p) {
+    margin-top: 12px;
+  }
+  .prose :global(blockquote cite) {
+    display: block;
+    margin-top: 12px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--ink-soft);
+  }
   .prose :global(blockquote cite)::before {
     content: "— ";
   }

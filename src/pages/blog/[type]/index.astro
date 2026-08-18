@@ -1,0 +1,74 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BlogCard from "../../../components/BlogCard.astro";
+
+export async function getStaticPaths() {
+  const types = ["prose", "case-study", "guide", "tutorial"] as const;
+  return types.map((type) => ({ params: { type } }));
+}
+
+const { type } = Astro.params;
+
+const posts = (await getCollection("blog"))
+  .filter((post) => post.data.postType === type)
+  .sort(
+    (a, b) =>
+      (b.data.pubDate?.valueOf() ?? 0) - (a.data.pubDate?.valueOf() ?? 0),
+  );
+
+const typeLabel: Record<string, string> = {
+  prose: "Prose",
+  "case-study": "Case Study",
+  guide: "Guide",
+  tutorial: "Tutorial",
+};
+
+const label = typeLabel[type!] ?? type;
+---
+
+<BaseLayout title={`${label} — Blog`} description={`${label} posts`}>
+  <div class="section">
+    <p class="eyebrow-small">Collection</p>
+    <h1 class="display">{label}</h1>
+    <div class="grid">
+      {posts.map((post) => <BlogCard id={post.id} {...post.data} />)}
+    </div>
+    {posts.length === 0 && <p class="empty">No posts yet.</p>}
+  </div>
+</BaseLayout>
+
+<style>
+  .section {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 76px 32px 90px;
+  }
+  .eyebrow-small {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 6px;
+  }
+  h1.display {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    margin: 0 0 32px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .empty {
+    color: var(--ink-soft);
+  }
+  @media (max-width: 720px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

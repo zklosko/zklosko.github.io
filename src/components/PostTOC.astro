@@ -1,0 +1,140 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+}
+
+const { headings } = Astro.props;
+
+// Only show h2/h3 since h1 is post title
+const items = headings.filter((h) => h.depth === 2 || h.depth === 3);
+---
+
+{
+  items.length > 0 && (
+    <nav class="toc" aria-label="Table of contents">
+      <p class="toc-label">On this page</p>
+      <ul>
+        {items.map((h) => (
+          <li class={`depth-${h.depth}`}>
+            <a href={`#${h.slug}`} data-toc-link={h.slug}>
+              {h.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}
+
+<style>
+  .toc {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+    padding-left: 20px;
+    border-left: 1px solid var(--line);
+  }
+  .toc-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    margin: 0 0 12px;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  li.depth-3 {
+    padding-left: 14px;
+  }
+  a {
+    display: block;
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    padding-left: 10px;
+    margin-left: -12px;
+    transition:
+      color 0.15s,
+      border-color 0.15s;
+  }
+  a:hover {
+    color: var(--ink);
+  }
+  a[data-active="true"] {
+    color: var(--violet);
+    border-color: var(--violet);
+    font-weight: 500;
+  }
+
+  @media (max-width: 960px) {
+    .toc {
+      position: static;
+      max-height: none;
+      border-left: none;
+      border-top: 1px solid var(--line);
+      padding: 20px 0 0;
+      margin-bottom: 40px;
+    }
+  }
+</style>
+
+<script>
+  function setupScrollSpy() {
+    const links =
+      document.querySelectorAll<HTMLAnchorElement>("[data-toc-link]");
+    if (links.length === 0) return;
+
+    const headingEls = Array.from(links)
+      .map((link) => {
+        const slug = link.dataset.tocLink!;
+        return document.getElementById(slug);
+      })
+      .filter((el): el is HTMLElement => el !== null);
+
+    const setActive = (slug: string | null) => {
+      links.forEach((link) => {
+        link.removeAttribute("data-active");
+        if (link.dataset.tocLink === slug) {
+          link.setAttribute("data-active", "true");
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+        if (visible.length > 0) {
+          setActive(visible[0].target.id);
+        }
+      },
+      { rootMargin: "-100px 0px -60% 0px" },
+    );
+
+    headingEls.forEach((el) => observer.observe(el));
+  }
+
+  setupScrollSpy();
+  document.addEventListener("astro:page-load", setupScrollSpy);
+</script>
